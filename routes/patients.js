@@ -18,7 +18,7 @@ const upload = multer({ dest: "uploads/xlsx" });
 
 const stroage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/images");
+    cb(null, "/tmp/images");
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + "_" + path.extname(file.originalname));
