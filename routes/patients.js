@@ -49,7 +49,7 @@ router.get("/patients/:HN", async function (req, res, next) {
   const HN = req.params.HN;
   try {
     const [rows, _] = await pool.query(
-      "SELECT * FROM PATIENT join history on patient.HN=history.HN join allergy on patient.HN=allergy.HN WHERE patient.HN=?",
+      "SELECT * FROM patient join history on patient.HN=history.HN join allergy on patient.HN=allergy.HN WHERE patient.HN=?",
       HN
     );
     res.json(rows);
