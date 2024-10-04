@@ -14,7 +14,7 @@ const uploadOpts = {
 const XLSX = require("xlsx");
 const fs = require("fs");
 const multer = require("multer");
-const upload = multer({ dest: "uploads/xlsx" });
+const upload = multer({ dest: "/tmp/xlsx" });
 
 const stroage = multer.diskStorage({
   destination: (req, file, cb) => {
